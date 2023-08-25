@@ -1,0 +1,99 @@
+    body {
+            margin: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+		
+		header {
+            background-color: #212121;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: #64ffda;
+            text-decoration: none;
+        }
+
+        .navigation {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navigation li {
+            margin: 0 1rem;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #ddd;
+            transition: color 0.3s;
+        }
+
+        .navigation a:hover {
+            color: #64ffda;
+        }
+
+        .navigation a.active {
+            color: #64ffda;
+            font-weight: bold;
+        }
+
+        .navigation a:active {
+            color: #00adb5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #212121;
+        }
+
+        h1, h2, h3, h4, p {
+            text-align: center;
+        }
+
+        .versions {
+            margin: 20px;
+        }
+
+        h2.versions, h2.dev_versions, h2.pre_versions {
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h2.versions {
+            background-color: #3498db;
+        }
+
+        h2.dev_versions {
+            background-color: #e67e22;
+        }
+
+        h2.pre_versions {
+            background-color: #e74c3c;
+        }
+
+        p {
+            margin: 5px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }

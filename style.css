@@ -4,51 +4,6 @@
             color: #fff;
             font-family: 'JetBrains Mono', monospace;
         }
-		
-		header {
-            background-color: #212121;
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            margin-left: 1rem;
-            color: #64ffda;
-            text-decoration: none;
-        }
-
-        .navigation {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navigation li {
-            margin: 0 1rem;
-        }
-
-        .navigation a {
-            text-decoration: none;
-            color: #ddd;
-            transition: color 0.3s;
-        }
-
-        .navigation a:hover {
-            color: #64ffda;
-        }
-
-        .navigation a.active {
-            color: #64ffda;
-            font-weight: bold;
-        }
-
-        .navigation a:active {
-            color: #00adb5;
-        }
 
         footer {
             text-align: center;

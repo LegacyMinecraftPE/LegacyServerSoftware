@@ -3,168 +3,169 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nukkit Legacy versions</title>
-    <meta name="description" content="Legacy Nukkit versions">
-    <meta name="keywords" content="Nukkit, Nukkit 0.14, Old Nukkit, Legacy Nukkit, Nukkit 0.14.3">
+    <title>PocketMine Legacy versions</title>
+    <meta name="description" content="Legacy PocketMine-MP versions">
+    <meta name="keywords" content="PocketMine-MP, PocketMine, PMMP, Legacy PocketMine, NostalgiaCore, PocketMine 1.3.12, 0.8.1">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <meta property="og:title" content="Legacy Nukkit Versions">
-    <style>
-        .version-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px 20px;
-            margin-top: 10px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
+    <meta property="og:title" content="Legacy PocketMine-MP Versions">
+<style>
+    .version-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px 20px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
 
-        @media (min-width: 600px) {
-            .version-list.grid-view {
-                grid-template-columns: 1fr 1fr;
-            }
+    @media (min-width: 600px) {
+        .version-list.grid-view {
+            grid-template-columns: 1fr 1fr;
         }
-        
-        .version-list.list-view {
-            grid-template-columns: 1fr;
-        }
+    }
+    
+    .version-list.list-view {
+        grid-template-columns: 1fr;
+    }
 
-        .version-group h2 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            font-size: 24px;
-            font-weight: 800;
-            text-align: left;
-        }
+    .version-group h2 {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+        font-size: 24px;
+        font-weight: 800;
+        text-align: left;
+    }
 
-        .version-list p {
-            margin: 0;
-            min-width: 0;
-        }
+    .version-list p {
+        margin: 0;
+        min-width: 0;
+    }
 
-        .version-list p a {
-            display: block;
-            background-color: var(--version-list-item);
-            color: var(--text-color);
-            padding: 15px;
-            text-align: left;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 700;
-            transition: background-color 0.2s ease;
-            border-radius: 0;
-            line-height: 1.2;
-            border: none;
-            border-bottom: 4px solid var(--navbar-hover-bg);
-        }
+    .version-list p a {
+        display: block;
+        background-color: var(--version-list-item);
+        color: var(--text-color);
+        padding: 15px;
+        text-align: left;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 700;
+        transition: background-color 0.2s ease;
+        border-radius: 0;
+        line-height: 1.2;
+        border: none;
+        border-bottom: 4px solid var(--navbar-hover-bg);
+    }
 
-        .version-list p a:hover {
-            background-color: var(--navbar-hover-bg);
-        }
-        
-        .old-version-link {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 15px 0;
-            margin: 0;
-            color: #ffffff;
-            background-color: #2a2727;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background-color 0.2s ease; 
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1050;
-            box-shadow: none;
-            border-bottom: 4px solid #333;
-            padding-right: 40px;
-        }
+    .version-list p a:hover {
+        background-color: var(--navbar-hover-bg);
+    }
+    
+    .old-version-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        margin: 0;
+        color: #ffffff;
+        background-color: #2a2727;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background-color 0.2s ease; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1050;
+        box-shadow: none;
+        border-bottom: 4px solid #333;
+        padding-right: 40px;
+    }
 
-        .old-version-link:hover {
-            color: #ffffff;
-            text-decoration: none;
-            background-color: #333333;
-            transform: none;
-        }
+    .old-version-link:hover {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #333333;
+        transform: none;
+    }
 
-        .old-version-link.hidden {
-            top: -60px;
-        }
+    .old-version-link.hidden {
+        top: -60px;
+    }
 
-        .old-version-link.permanently-hidden {
-            display: none !important;
-        }
+    .old-version-link.permanently-hidden {
+        display: none !important;
+    }
 
-        .navbar-fixed-top-adjusted {
-            top: 55px;
-        }
+    .navbar-fixed-top-adjusted {
+        top: 55px;
+    }
 
-        .navbar-fixed-top-adjusted.moved-up {
-            top: 0;
-        }
+    .navbar-fixed-top-adjusted.moved-up {
+        top: 0;
+    }
 
-        .close-btn {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            line-height: 1;
-            cursor: pointer;
-            color: #fff;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
-        }
+    .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        line-height: 1;
+        cursor: pointer;
+        color: #fff;
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+    }
 
-        .close-btn:hover {
-            opacity: 1;
-        }
+    .close-btn:hover {
+        opacity: 1;
+    }
 
-        .search-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
+    .search-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
 
-        .search-input {
-            flex-grow: 1;
-            padding: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            font-size: 18px;
-            box-sizing: border-box;
-            background-color: var(--jumbotron-bg);
-            color: var(--text-color);
-        }
-        
-        .view-toggle-btn {
-            background-color: var(--navbar-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            padding: 0 15px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            color: var(--text-color);
-        }
+    .search-input {
+        flex-grow: 1;
+        padding: 15px;
+        border: 1px solid var(--border-color);
+        border-radius: 0;
+        font-size: 18px;
+        box-sizing: border-box;
+        background-color: var(--jumbotron-bg);
+        color: var(--text-color);
+    }
+    
+    .view-toggle-btn {
+        background-color: var(--navbar-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 0;
+        padding: 0 15px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        color: var(--text-color);
+    }
 
-        .view-toggle-btn:hover {
-            background-color: var(--navbar-hover-bg);
-        }
-        
-        .view-toggle-btn svg {
-            display: block;
-            fill: currentColor;
-        }
-    </style>
+    .view-toggle-btn:hover {
+        background-color: var(--navbar-hover-bg);
+    }
+    
+    .view-toggle-btn svg {
+        display: block;
+        fill: currentColor;
+    }
+
+</style>
 </head>
 <body id="page-body" style="padding-top: 105px;">
     
-    <a href="owv/nukkit.html" class="old-version-link" id="old-version-button">
+    <a href="owv/index.html" class="old-version-link" id="old-version-button">
         Switch to old website verion
         <span class="close-btn" id="dismiss-old-version">&times;</span>
     </a>
@@ -182,10 +183,10 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="pm-versions.html">PM versions</a></li>
+                    <li class="active"><a href="pm-versions.html">PM versions</a></li>
                     <li><a href="pm-installers.html">PM installers</a></li>
                     <li><a href="pm-app.html">PM app</a></li>
-                    <li class="active"><a href="nukkit.html">Nukkit</a></li>
+                    <li><a href="nukkit.html">Nukkit</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -222,34 +223,157 @@
 
     <div class="jumbotron">
         <div class="container text-center">
-            <h1>Old Nukkit versions</h1>
+            <h1>Old PocketMine Versions</h1>
         </div>
     </div>
     
     <div class="container section-padding">
-
         <div class="search-container">
             <input type="text" id="versionSearch" class="search-input" placeholder="Search for version">
             <button id="viewToggleBtn" class="view-toggle-btn" aria-label="Change the list view">
                 <svg id="gridIcon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -960 960 960" style="display: none;"><path d="M120-520v-320h320v320H120Zm0 400v-320h320v320H120Zm400-400v-320h320v320H520Zm0 400v-320h320v320H520Z"/></svg>
-                <svg id="listIcon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -960 960 960" style="display: none;"><path d="M80-160v-160h160v160H80Zm240 0v-160h560v160H320ZM80-400v-160h160v160H80Zm240 0v-160h560v160H320ZM80-640v-160h160v160H80Zm240 0v-160h560v160H320Z"/></svg>
-            </button>
+                <svg id="listIcon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -960 960 960" style="display: none;"><path d="M80-160v-160h160v160H80Zm240 0v-160h560v160H320ZM80-400v-160h160v160H80Zm240 0v-160h560v160H320ZM80-640v-160h160v160H80Zm240 0v-160h560v160H320Z"/></svg>            </button>
         </div>
 
         <div class="version-group">
+            <h2>PocketMine 1.0</h2>
             <div class="version-list grid-view">
-                <p><a href="assets/versions/nukkit/Nukkit-0.12.30.jar">0.12.30</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.13.0.jar">0.13.0</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.13.1.jar">0.13.1</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.13.2.jar">0.13.2</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit_v0.13.x.jar">0.13.x</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.14.1.jar">0.14.1</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.14.3.jar">0.14.3</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.14.jar">0.14</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit_v0.14.x.jar">0.14.x (Recommended)</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.15.0.jar">0.15.0</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.16.jar">0.16</a></p>
-                <p><a href="assets/versions/nukkit/Nukkit-0.16.0.jar">0.16.0</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.zip">Alpha 1.0</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0_test.zip">Alpha 1.0 test</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.1.zip">Alpha 1.0.1</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.2.zip">Alpha 1.0.2</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.3.zip">Alpha 1.0.3</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.4.zip">Alpha 1.0.4</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.5.zip">Alpha 1.0.5</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.6.zip">Alpha 1.0.6</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.7.zip">Alpha 1.0.7</a></p>
+                <p><a href="assets/versions/1.0/PocketMine-MP-Alpha_1.0.8.zip">Alpha 1.0.8</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.1</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.1/PocketMine-MP-Alpha_1.1.zip">Alpha 1.1</a></p>
+                <p><a href="assets/versions/1.1/PocketMine-MP-Alpha_1.1.1.zip">Alpha 1.1.1 (for MCPE v0.6.1)</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.2</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.2/PocketMine-MP-Alpha_1.2.zip">Alpha 1.2</a></p>
+                <p><a href="assets/versions/1.2/PocketMine-MP-Alpha_1.2.1.zip">Alpha 1.2.1</a></p>
+                <p><a href="assets/versions/1.2/PocketMine-MP-Alpha_1.2.2.zip">Alpha 1.2.2</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.3</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.zip">Alpha 1.3</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.1.zip">Alpha 1.3.1</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.2.zip">Alpha 1.3.2</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.3.zip">Alpha 1.3.3</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.4.zip">Alpha 1.3.4</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.5.zip">Alpha 1.3.5</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.6.zip">Alpha 1.3.6</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.7.zip">Alpha 1.3.7</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.8.zip">Alpha 1.3.8</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.9.zip">Alpha 1.3.9</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.10.zip">Alpha 1.3.10</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.11.zip">Alpha 1.3.11</a></p>
+                <p><a href="assets/versions/1.3/PocketMine-MP-Alpha_1.3.12.zip">Alpha 1.3.12 (for MCPE v0.8.1)</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.4</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.4/PocketMine-MP-1.4.zip">1.4</a></p>
+                <p><a href="assets/versions/1.4/PocketMine-MP-1.4.1.zip">1.4.1</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.4 dev-builds</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-1.4.1dev-936.zip">1.4.1dev 936</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-1.4-916.zip">1.4 916</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-228.zip">Alpha 1.4dev 228</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-277.zip">Alpha 1.4dev 277</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-413.zip">Alpha 1.4dev 413</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-449.zip">Alpha 1.4dev 449</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-478.zip">Alpha 1.4dev 478</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-491.zip">Alpha 1.4dev 491</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-576.zip">Alpha 1.4dev 576</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-599.zip">Alpha 1.4dev 599</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-659.zip">Alpha 1.4dev 659</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-665.zip">Alpha 1.4dev 665</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-707.zip">Alpha 1.4dev 707</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-822.zip">Alpha 1.4dev 822</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-834.zip">Alpha 1.4dev 834</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-842.zip">Alpha 1.4dev 842</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-847.zip">Alpha 1.4dev 847</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-855.zip">Alpha 1.4dev 855</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-Alpha_1.4dev-900.zip">Alpha 1.4dev 900</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-api-1.11.0.zip">api 1.11.0</a></p>
+                <p><a href="assets/versions/1.4/dev-builds/PocketMine-MP-api-1.12.0.zip">api 1.12.0</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.5 dev-builds</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.5dev/PocketMine-MP-1.5dev.zip">1.5dev</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.6 dev-builds</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.6dev/PocketMine-MP-1.6.1dev-87.zip">1.6.1dev 87</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine 1.7 dev-builds</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-27.zip">1.7dev 27</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-83.zip">1.7dev 83</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-318.zip">1.7dev 318</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-501.zip">1.7dev 501</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-516.zip">1.7dev 516</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-677.zip">1.7dev 677</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-698.zip">1.7dev 698</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-703.zip">1.7dev 703</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-717.zip">1.7dev 717</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-743.zip">1.7dev 743</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-937.zip">1.7dev 937</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-999.zip">1.7dev 999</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-1.7dev-1001.zip">1.7dev 1001</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-api-3.0.0-ALPHA8.zip">api 3.0.0 ALPHA8</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-api-3.0.0-ALPHA9.zip">api 3.0.0 ALPHA9</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-api-3.0.0-ALPHA10.zip">api 3.0.0 ALPHA10</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-api-3.0.0-ALPHA11.zip">api 3.0.0 ALPHA11</a></p>
+                <p><a href="assets/versions/1.7dev/PocketMine-MP-api-3.0.0-ALPHA12.zip">api 3.0.0 ALPHA12</a></p>
+            </div>
+        </div>
+
+        <div class="version-group">
+            <h2>PocketMine Pre-releases</h2>
+            <div class="version-list grid-view">
+                <p><a href="assets/versions/pre-releases/PocketMine-MP-before-fixed-wrong-paths(1.3.13).zip">before fixed wrong paths(1.3.13)</a></p>
+                <p><a href="assets/versions/pre-releases/PocketMine-MP-pocketmine-mp-rebrand(pre-realese).zip">pocketmine mp rebrand(pre realese)</a></p>
+            </div>
+        </div><hr>
+
+        <br><br><br>
+
+        <div class="version-group" id="download-archives-group">
+            <div class="version-list grid-view">
+                <p><a href="https://www.mediafire.com/file/h8wskopevn3jfmq/pm-legacy.zip/file">Download archive with all versions (Mediafire)</a></p>
+                <p><a href="https://archive.org/download/pm-legacy/pm-legacy.zip">Download archive with all versions (Archive.org)</a></p>
             </div>
         </div>
     </div>
@@ -344,7 +468,7 @@
                 hideButtonPermanently();
             });
         }
-        
+
         const versionSearch = document.getElementById('versionSearch');
         const viewToggleBtn = document.getElementById('viewToggleBtn');
         const gridIcon = document.getElementById('gridIcon');
@@ -352,7 +476,7 @@
         const versionGroups = document.querySelectorAll('.version-group');
         const downloadArchivesGroup = document.getElementById('download-archives-group');
         const versionLists = document.querySelectorAll('.version-list');
-        const viewModeKey = 'versionViewModeNukkit';
+        const viewModeKey = 'versionViewMode';
 
         function setViewMode(mode) {
             versionLists.forEach(list => {

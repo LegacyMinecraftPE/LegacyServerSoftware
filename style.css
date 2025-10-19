@@ -103,6 +103,23 @@ body {
     padding-bottom: 17px;
 }
 
+.dropdown-menu {
+    background-color: var(--navbar-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+}
+        
+.dropdown-menu > li > a {
+    color: var(--text-color) !important;
+    font-weight: 500 !important;
+}
+        
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: var(--navbar-hover-bg);
+    color: var(--text-color) !important;
+}
+
 .navbar-brand {
     font-weight: 600;
     padding-top: 15px;

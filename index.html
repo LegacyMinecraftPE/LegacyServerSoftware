@@ -31,19 +31,18 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
-        
+
         @media (min-width: 768px) {
             .small-menu-grid {
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
         }
-        
+
         @media (min-width: 576px) and (max-width: 767px) {
             .small-menu-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
-
 
         .menu-item-link {
             display: flex;
@@ -63,7 +62,7 @@
             border-radius: 0;
             line-height: 1.3;
         }
-        
+
         .small-menu-link {
             display: flex;
             flex-direction: column;
@@ -89,7 +88,7 @@
             transform: translateY(-2px);
             text-decoration: none;
         }
-        
+
         .section-header {
             margin-top: 30px;
             margin-bottom: 15px;
@@ -98,67 +97,6 @@
             font-size: 24px;
             font-weight: 800;
             text-align: left;
-        }
-        
-        .old-version-link {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 15px 0;
-            margin: 0;
-            color: #ffffff;
-            background-color: #2a2727;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background-color 0.2s ease; 
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1050;
-            box-shadow: none;
-            border-bottom: 4px solid #333;
-            padding-right: 40px;
-        }
-
-        .old-version-link:hover {
-            color: #ffffff;
-            text-decoration: none;
-            background-color: #333333;
-            transform: none;
-        }
-
-        .old-version-link.hidden {
-            top: -60px;
-        }
-
-        .old-version-link.permanently-hidden {
-            display: none !important;
-        }
-
-        .navbar-fixed-top-adjusted {
-            top: 55px;
-        }
-
-        .navbar-fixed-top-adjusted.moved-up {
-            top: 0;
-        }
-
-        .close-btn {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            line-height: 1;
-            cursor: pointer;
-            color: #fff;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
-        }
-
-        .close-btn:hover {
-            opacity: 1;
         }
 
         .modal-open-blur {
@@ -209,7 +147,7 @@
         .modal-close-btn:hover {
             opacity: 1;
         }
-        
+
         .modal-content h3 {
             margin-top: 0;
             font-weight: 700;
@@ -217,16 +155,9 @@
         }
     </style>
 </head>
-<body id="page-body" style="padding-top: 105px;">
+<body id="page-body" style="padding-top: 50px;">
 
-    <!--
-    <a href="owv/index.html" class="old-version-link" id="old-version-button">
-        Switch to old website verion
-        <span class="close-btn" id="dismiss-old-version">&times;</span>
-    </a>
-    -->
-
-    <nav class="navbar navbar-default navbar-fixed-top navbar-fixed-top-adjusted" id="main-navbar">
+    <nav class="navbar navbar-default navbar-fixed-top" id="main-navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -284,7 +215,7 @@
                 <p>Minecraft PE Alpha server software archive</p>
             </div>
         </div>
-        
+
         <div class="container section-padding">
 
             <div class="main-menu-grid">
@@ -301,7 +232,7 @@
                     Old Nukkit versions
                 </a>
             </div>
-                    
+
             <div class="small-menu-grid">
                 <a href="https://github.com/kotyaralih/NostalgiaCore/" class="small-menu-link" target="_blank">
                     NostalgiaCore
@@ -374,43 +305,8 @@
         }
 
         themeToggle.addEventListener('click', toggleTheme);
-
-        const pageBody = document.getElementById('page-body');
-        const oldVersionButton = document.getElementById('old-version-button');
-        const mainNavbar = document.getElementById('main-navbar');
-        const dismissButton = document.getElementById('dismiss-old-version');
-        const buttonHeight = 55;
-        const localStorageKey = 'oldVersionDismissed';
-
-        function hideButtonPermanently() {
-            localStorage.setItem(localStorageKey, 'true');
-            oldVersionButton.classList.add('permanently-hidden');
-            mainNavbar.classList.add('moved-up');
-            pageBody.style.paddingTop = '50px';
-        }
-
-        if (localStorage.getItem(localStorageKey) === 'true') {
-            hideButtonPermanently();
-        } else {
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
-
-                if (currentScrollY > buttonHeight) {
-                    oldVersionButton.classList.add('hidden');
-                    mainNavbar.classList.add('moved-up');
-                } else if (currentScrollY === 0) {
-                    oldVersionButton.classList.remove('hidden');
-                    mainNavbar.classList.remove('moved-up');
-                }
-            });
-
-            dismissButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                hideButtonPermanently();
-            });
-        }
     </script>
-    
+
     <script>
         const navbarBrandLink = document.getElementById('navbar-brand-link');
         const mainSiteModal = document.getElementById('mainSiteModal');
